@@ -1,0 +1,87 @@
+:root {
+  --courses-per-row: 3;
+  --course-container-width: clamp(12rem, 27.5vw, 17.5rem);
+
+  --course-card-col: white;
+  --course-card-radius: .25rem;
+
+  --course-card-title-col: black;
+  --course-card-description-col: black;
+  --course-card-last-info-col: black;
+
+  --course-card-title-size: clamp(1.1rem, 2.75vw, 1.75rem);
+  --course-card-description-size: clamp(0.85rem, 1.85vw, 1.2rem);
+  --course-card-last-info-size: clamp(0.85rem, 2vw, 1.35rem);
+}
+
+@media (max-width: 40em) {
+  :root {
+    --courses-per-row: 1;
+    --course-container-width: clamp(15rem, 16rem, 17.5rem);
+
+    --course-card-title-size: 1.1rem;
+    --course-card-description-size: 0.85rem;
+    --course-card-last-info-size: 0.95rem;
+  }
+}
+
+/* Courses */
+.course-container {
+  display: grid;
+  grid-template-columns: repeat(var(--courses-per-row), var(--course-container-width));
+  gap: 1rem;
+  justify-content: center;
+}
+
+.course-card {
+  background-color: var(--course-card-col);
+  border-radius: var(--course-card-radius);
+  padding: .25rem;
+
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.course-image-container {
+  background-color: grey;
+  width: 100%;
+  /* height: 100%; */
+  height: 10rem;
+  /* border-radius: var(--course-card-radius); */
+}
+
+.course-title {
+  color: var(--course-card-title-col);
+  font-size: var(--course-card-title-size);
+  font-weight: 600;
+  word-wrap: break-word;
+}
+.course-description {
+  color: var(--course-card-description-col);
+  font-size: var(--course-card-description-size);
+  font-weight: 400;
+  /* height: 10vw; */
+  word-wrap: break-word;
+  height: fit-content;
+}
+
+.course-last-info-container {
+  position: absolute;
+  bottom: 0;
+}
+.course-last-info {
+  color: var(--course-card-last-info-col);
+  font-size: var(--course-card-last-info-size);
+  font-weight: 600;
+}
+
+@media (min-width: 40em) {
+  .course-image-container {
+    background-color: grey;
+    /* width: 100%; */
+    /* height: 100%; */
+    height: 15vw;
+    /* border-radius: var(--course-card-radius); */
+  }
+}
