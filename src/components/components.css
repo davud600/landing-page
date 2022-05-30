@@ -1,4 +1,7 @@
 :root {
+  --is-screen-wide: 1;
+
+  /* courses variables */
   --courses-per-row: 3;
   --course-container-width: clamp(12rem, 27.5vw, 17.5rem);
 
@@ -9,19 +12,45 @@
   --course-card-description-col: black;
   --course-card-last-info-col: black;
 
-  --course-card-title-size: clamp(1.1rem, 2.75vw, 1.75rem);
-  --course-card-description-size: clamp(0.85rem, 1.85vw, 1.2rem);
-  --course-card-last-info-size: clamp(0.85rem, 2vw, 1.35rem);
+  --course-card-title-size: clamp(1rem, 2.5vw, 1.2rem);
+  --course-card-description-size: clamp(0.85rem, 1.8vw, 1rem);
+  --course-card-last-info-size: clamp(0.75rem, 2vw, 1rem);
+
+  /* upcoming-events variables */
+  --upcoming-events-per-row: 3;
+  --upcoming-event-container-width: clamp(12rem, 27.5vw, 17.5rem);
+
+  --upcoming-event-card-col: white;
+  --upcoming-event-card-radius: .25rem;
+
+  --upcoming-event-card-title-col: black;
+  --upcoming-event-card-description-col: black;
+  --upcoming-event-card-last-info-col: black;
+
+  --upcoming-event-card-title-size: clamp(1rem, 2.5vw, 1.2rem);
+  --upcoming-event-card-description-size: clamp(0.85rem, 1.8vw, 1rem);
+  --upcoming-event-card-last-info-size: clamp(0.7rem, 1.5vw, 1rem);
 }
 
 @media (max-width: 40em) {
   :root {
+    --is-screen-wide: 0;
+
+    /* courses */
     --courses-per-row: 1;
     --course-container-width: clamp(15rem, 16rem, 17.5rem);
 
     --course-card-title-size: 1.1rem;
     --course-card-description-size: 0.85rem;
     --course-card-last-info-size: 0.95rem;
+
+    /* upcoming-events */
+    --upcoming-events-per-row: 1;
+    --upcoming-event-container-width: clamp(15rem, 16rem, 17.5rem);
+
+    --upcoming-event-card-title-size: 1.1rem;
+    --upcoming-event-card-description-size: 0.85rem;
+    --upcoming-event-card-last-info-size: 0.95rem;
   }
 }
 
@@ -36,7 +65,7 @@
 .course-card {
   background-color: var(--course-card-col);
   border-radius: var(--course-card-radius);
-  padding: .25rem;
+  padding: .35rem;
 
   display: flex;
   flex-direction: column;
@@ -44,11 +73,13 @@
 }
 
 .course-image-container {
-  background-color: grey;
+  width: 100%;
+  /* border-radius: var(--course-card-radius); */
+}
+
+.course-image {
   width: 100%;
   /* height: 100%; */
-  height: 10rem;
-  /* border-radius: var(--course-card-radius); */
 }
 
 .course-title {
@@ -76,12 +107,55 @@
   font-weight: 600;
 }
 
-@media (min-width: 40em) {
-  .course-image-container {
-    background-color: grey;
-    /* width: 100%; */
-    /* height: 100%; */
-    height: 15vw;
-    /* border-radius: var(--course-card-radius); */
-  }
+/* Upcoming  */
+.upcoming-event-container {
+  display: grid;
+  grid-template-columns: repeat(var(--upcoming-events-per-row), var(--upcoming-event-container-width));
+  gap: 1rem;
+  justify-content: center;
+}
+
+.upcoming-event-card {
+  background-color: var(--upcoming-event-card-col);
+  border-radius: var(--upcoming-event-card-radius);
+  padding: .35rem;
+
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.upcoming-event-image-container {
+  width: 100%;
+  /* border-radius: var(--upcoming-event-card-radius); */
+}
+
+.upcoming-event-image {
+  width: 100%;
+  /* height: 100%; */
+}
+
+.upcoming-event-title {
+  color: var(--upcoming-event-card-title-col);
+  font-size: var(--upcoming-event-card-title-size);
+  font-weight: 600;
+  word-wrap: break-word;
+}
+.upcoming-event-description {
+  color: var(--upcoming-event-card-description-col);
+  font-size: var(--upcoming-event-card-description-size);
+  font-weight: 400;
+  /* height: 10vw; */
+  word-wrap: break-word;
+  height: fit-content;
+}
+
+.upcoming-event-last-info-container {
+  position: absolute;
+  bottom: 0;
+}
+.upcoming-event-last-info {
+  color: var(--upcoming-event-card-last-info-col);
+  font-size: var(--upcoming-event-card-last-info-size);
+  /* font-weight: 600; */
 }
