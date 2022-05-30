@@ -15,10 +15,15 @@ code {
 
 :root {
   --courses-section-col: #ebeced;
+  --upcoming-events-section-col: #ebeced;
 
-  --primary-text-size: 2.5rem;
-  --secondary-text-size: 1.5rem;
-  --third-text-size: 1.25rem;
+  --primary-text-size: 2rem;
+  --secondary-text-size: 1.25rem;
+  --third-text-size: 1rem;
+
+  --courses-primary-text-size: 1.5rem;
+
+  --upcoming-events-primary-text-size: 1.5rem;
 }
 
 @media (max-width: 40em) {
@@ -26,6 +31,10 @@ code {
     --primary-text-size: 1.75rem;
     --secondary-text-size: 1.25rem;
     --third-text-size: 1rem;
+
+    --courses-primary-text-size: 1.25rem;
+
+    --upcoming-events-primary-text-size: 1.25rem;
   }
 }
 
@@ -48,7 +57,7 @@ code {
 
 /* Main section */
 .main-section {
-  height: 27.5rem;
+  height: 28rem;
   position: relative;
   display: flex;
   justify-content: center;
@@ -88,9 +97,26 @@ code {
 }
 
 .courses-primary-text {
-  font-size: var(--primary-text-size);
+  font-size: var(--courses-primary-text-size);
   font-weight: 700;
 }
+
+/* Upcoming events section */
+.upcoming-events-section {
+  background-color: var(--upcoming-events-section-col);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.upcoming-events-primary-text {
+  font-size: var(--upcoming-events-primary-text-size);
+  font-weight: 700;
+}
+
+
 
 /* Scrollbar */
 /* width */

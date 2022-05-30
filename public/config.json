@@ -1,0 +1,51 @@
+{
+  "COURSES": [
+    {
+      "title": "course 1 title the title is very loong too skodflkasjdfasiodpufasupodifu",
+      "description": "this is the first course opdfsfigusdpofkjgofd kjloooooooooooooooong description its veryyy lonnngnggnngnggggg",
+      "price": "75$",
+      "thumbnail": "images/course1.jpg"
+    },
+    {
+      "title": "course 2",
+      "description": "this is the second course",
+      "price": "40$",
+      "thumbnail": "images/amogus.jpg"
+    },
+    {
+      "title": "course 3",
+      "description": "this is the third course",
+      "price": "96$",
+      "thumbnail": "images/amogus.jpg"
+    },
+    {
+      "title": "course 4",
+      "description": "this is the fourth course",
+      "price": "77$",
+      "thumbnail": "images/amogus.jpg"
+    }
+  ],
+  "UPCOMING_EVENTS": [
+    {
+      "title": "upcoming event title",
+      "description": "this is an upcoming aksdjpfioadfhjklashdfkhnvjkdaiosidufjsankdmvjkadihoiskmnavbodijpuwerhkjlfnmasdvbodjhipuerwjklfasnmdvhkeventsdfsdfjksdhfsdjklfhsdjklfh that is going to take place in this location at this time",
+      "time": "May 30th 2022 15:00",
+      "location": "42.659583,20.289966",
+      "thumbnail": "images/course1.jpg"
+    },
+    {
+      "title": "another upcoming event",
+      "description": "this is an upcoming event",
+      "time": "July 17th 2022 12:30",
+      "location": "42.659583,20.289966",
+      "thumbnail": "images/course1.jpg"
+    },
+    {
+      "title": "another upcoming event",
+      "description": "this is an upcoming event",
+      "time": "July 17th 2022 12:30",
+      "location": "42.659583,20.289966",
+      "thumbnail": "images/course1.jpg"
+    }
+  ]
+}
